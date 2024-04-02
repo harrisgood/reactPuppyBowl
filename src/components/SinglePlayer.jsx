@@ -1,13 +1,15 @@
+import DeletePuppy from "./DeletePuppy"
 
-const SinglePlayer = ({highlightedPuppy, detailsPage, setDetailsPage}) => {
-  console.log('highlightedPuppy: ', highlightedPuppy)
+const SinglePlayer = ({setDetailPuppy, detailPuppy}) => {
+  console.log('detailPuppy: ', detailPuppy)
   return (
     <div>
-      <img src={highlightedPuppy.imageUrl} alt='an athlete in the 2024 puppy bowl' />
-      <h3>{highlightedPuppy.name}</h3>
-      <p>{highlightedPuppy.breed}</p>
-      <p>{`Status: ${highlightedPuppy.status}`}</p>
-      <button onClick={() => {setDetailsPage(!detailsPage)}}>Go Back</button>
+      <img src={detailPuppy.imageUrl} alt='an athlete in the 2024 puppy bowl' />
+      <h3>{detailPuppy.name}</h3>
+      <p>{detailPuppy.breed}</p>
+      <p>{`Status: ${detailPuppy.status}`}</p>
+      <button onClick={() => {setDetailPuppy({})}}>Go Back</button>
+      <DeletePuppy puppyToDelete={detailPuppy} />
     </div>
   )
 }

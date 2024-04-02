@@ -2,14 +2,10 @@ import { useState, useEffect } from "react"
 import PlayerCard from "./PlayerCard"
 import SinglePlayer from "./SinglePlayer"
 
-const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/2402-FTB-ET-WEB-FT`
-
-const AllPlayers = () => {
+const AllPlayers = ({API_URL}) => {
   const [playerList, setPlayerList] = useState([])
-  const [detailsPage, setDetailsPage] = useState(false)
-  const [highlightedPuppy, setHighlightedPuppy] = useState({})
+  const [detailPuppy, setDetailPuppy] = useState({})
   
-
   useEffect(() => {
     fetchPlayerData();
   }, [])
@@ -27,18 +23,16 @@ const AllPlayers = () => {
     }
   }
   
-  
   return (
-    detailsPage ? 
-        <SinglePlayer highlightedPuppy={highlightedPuppy} detailsPage={detailsPage} setDetailsPage={setDetailsPage}/>
+    detailPuppy.name ? 
+        <SinglePlayer detailPuppy={detailPuppy} setDetailPuppy={setDetailPuppy}/>
       :
         <>
           <h2>This Year's Athletes</h2>
           <ul>
             {playerList.map((currentPuppy, index) => {
-              return (<PlayerCard key={index} currentPuppy={currentPuppy} detailsPage={detailsPage} setDetailsPage={setDetailsPage} setHighlightedPuppy={setHighlightedPuppy} />
+              return (<PlayerCard key={index} currentPuppy={currentPuppy} detailPuppy={detailPuppy} setDetailPuppy={setDetailPuppy} />
             )})}
-            
           </ul>
         </>
   )

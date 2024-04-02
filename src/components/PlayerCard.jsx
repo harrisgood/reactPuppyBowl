@@ -1,16 +1,15 @@
 
-const PlayerCard = ({currentPuppy, detailsPage, setDetailsPage, setHighlightedPuppy}) => {
+const PlayerCard = ({currentPuppy, detailPuppy, setDetailPuppy, setHighlightedPuppy}) => {
   
 
   const handleClick = () => {
-    setHighlightedPuppy(currentPuppy)
-    setDetailsPage(!detailsPage)
+    setDetailPuppy(currentPuppy)
   }
   return (
     <>
         <div>
+          <img src={currentPuppy.imageUrl} alt='an athlete in the 2024 puppy bowl' />
           <h3>{currentPuppy.name}</h3>
-          <p>{currentPuppy.breed}</p>
           <button onClick={handleClick}>See Details</button>
         </div>      
     </>
