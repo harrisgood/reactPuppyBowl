@@ -1,19 +1,20 @@
+import { Link } from 'react-router-dom'
 
-const PlayerCard = ({currentPuppy, detailPuppy, setDetailPuppy, setHighlightedPuppy}) => {
+const PlayerCard = ({ currentPuppy, detailPuppy, setDetailPuppy }) => {
   
 
   const handleClick = () => {
     setDetailPuppy(currentPuppy)
   }
+
   return (
     <>
-        <div>
+        <div onClick={handleClick}>
           <img src={currentPuppy.imageUrl} alt='an athlete in the 2024 puppy bowl' />
           <h3>{currentPuppy.name}</h3>
-          <button onClick={handleClick}>See Details</button>
+          <Link to='/singleplayer'>See Details</Link>
         </div>      
     </>
-    
   )
 }
 

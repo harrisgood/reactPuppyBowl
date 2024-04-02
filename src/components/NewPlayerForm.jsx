@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { API_URL } from "../App"
 
-const NewPlayerForm = ({API_URL}) => {
+const NewPlayerForm = () => {
   const [name, setName] = useState('')
   const [breed, setBreed] = useState('')
   const [image, setImage] = useState('')

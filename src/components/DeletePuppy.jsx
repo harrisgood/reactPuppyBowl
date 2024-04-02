@@ -1,6 +1,6 @@
+import { API_URL } from "../App"
 
 const DeletePuppy = ({puppyToDelete}) => {
-  const API_URL = `https://fsa-puppy-bowl.herokuapp.com/api/2402-FTB-ET-WEB-FT`
   const deleteOnClick = async (event) => {
     event.preventDefault()
     console.log(puppyToDelete)

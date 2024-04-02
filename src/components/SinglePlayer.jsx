@@ -1,5 +1,5 @@
 import DeletePuppy from "./DeletePuppy"
-
+import { Link } from "react-router-dom"
 const SinglePlayer = ({setDetailPuppy, detailPuppy}) => {
   console.log('detailPuppy: ', detailPuppy)
   return (
@@ -8,7 +8,7 @@ const SinglePlayer = ({setDetailPuppy, detailPuppy}) => {
       <h3>{detailPuppy.name}</h3>
       <p>{detailPuppy.breed}</p>
       <p>{`Status: ${detailPuppy.status}`}</p>
-      <button onClick={() => {setDetailPuppy({})}}>Go Back</button>
+      <Link to="/">Go Back</Link>
       <DeletePuppy puppyToDelete={detailPuppy} />
     </div>
   )

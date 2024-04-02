@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react"
 import PlayerCard from "./PlayerCard"
-import SinglePlayer from "./SinglePlayer"
+import { API_URL } from "../App"
 
-const AllPlayers = ({API_URL}) => {
+const AllPlayers = ({detailPuppy, setDetailPuppy}) => {
   const [playerList, setPlayerList] = useState([])
-  const [detailPuppy, setDetailPuppy] = useState({})
   
   useEffect(() => {
     fetchPlayerData();
@@ -24,9 +23,6 @@ const AllPlayers = ({API_URL}) => {
   }
   
   return (
-    detailPuppy.name ? 
-        <SinglePlayer detailPuppy={detailPuppy} setDetailPuppy={setDetailPuppy}/>
-      :
         <>
           <h2>This Year's Athletes</h2>
           <ul>
