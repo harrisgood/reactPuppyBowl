@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import PlayerCard from "./PlayerCard"
 import { API_URL } from "../App"
+import SearchForm from "./SearchForm"
 
 const AllPlayers = ({detailPuppy, setDetailPuppy}) => {
   const [playerList, setPlayerList] = useState([])
@@ -24,6 +25,10 @@ const AllPlayers = ({detailPuppy, setDetailPuppy}) => {
   
   return (
         <>
+          
+          <h3>Filter by Name:</h3>
+          <SearchForm playerList={playerList} setPlayerList={setPlayerList}  />
+
           <h2>This Year's Athletes</h2>
           <ul>
             {playerList.map((currentPuppy, index) => {
