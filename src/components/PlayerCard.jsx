@@ -12,7 +12,7 @@ const PlayerCard = ({ currentPuppy, detailPuppy, setDetailPuppy }) => {
         <div onClick={handleClick}>
           <img src={currentPuppy.imageUrl} alt='an athlete in the 2024 puppy bowl' />
           <h3>{currentPuppy.name}</h3>
-          <Link to='/singleplayer'>See Details</Link>
+          <Link to={`/players/${currentPuppy.id}`}>See Details</Link>
         </div>      
     </>
   )
