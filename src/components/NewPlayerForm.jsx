@@ -29,26 +29,25 @@ const NewPlayerForm = () => {
   }
 
   return (
-    <>
-      <h2>Add a Puppy</h2>
+    <div className="formDiv">
       <form onSubmit={addPlayer}>
         <label>
           Puppy Name: <input value={name} onChange={(e) => {setName
           (e.target.value)}}/>
-        </label>
+        </label> <br />
 
         <label>
           Puppy Breed: <input value={breed} onChange={(e) => {setBreed
           (e.target.value)}}/>
-        </label>
+        </label> <br />
 
         <label>
           Image URL: <input value={image} onChange={(e) => {setImage
-          (e.target.value)}}/>
+          (e.target.value)}}/> <br />
         </label>
         <button>Add Puppy</button>
       </form>
-    </>
+    </div>
   )
 }
 

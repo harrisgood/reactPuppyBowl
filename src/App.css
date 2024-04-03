@@ -1,17 +1,50 @@
 body{
   background-color: darkkhaki;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #002D62;
+}
+
+a{
+  background-color: white;
+  text-decoration: none;
+  padding: 3px;
+  border: 1px solid grey
 }
 
 .playerCard{
   border: 3px solid darkgreen;
   background-color: darkseagreen;
-  width: 60%;
+  margin: auto;
+  padding: 3px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
-.playerCard img {
-  height: 75px;
-  width: 75px;
+
+.playerCard img{
+  height: 150px;
+  width: 150px;
+}
+
+.detailedPlayerCard{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border: 3px solid darkgreen;
+  background-color: darkseagreen;
+}
+
+.singlePlayerPageImg{
+  height: 500px;
+  width: 500px;
+}
+
+.formDiv{
+  border: 3px solid darkgreen;
+  background-color: darkseagreen;
+  padding: 3px;
 }

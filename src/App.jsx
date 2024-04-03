@@ -14,7 +14,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element={<HomePage detailPuppy={detailPuppy} setDetailPuppy={setDetailPuppy} />} />
-        <Route path='/players/:id' element={<SinglePlayer detailPuppy={detailPuppy} setDetailPuppy={setDetailPuppy} />} />
+        <Route path='/players/:id' element={<SinglePlayer detailPuppy={detailPuppy} />} />
       </Routes>
     </>
   )

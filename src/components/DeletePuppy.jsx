@@ -1,6 +1,6 @@
 import { API_URL } from "../App"
 
-const DeletePuppy = ({puppyToDelete}) => {
+const DeletePuppy = ({ puppyToDelete }) => {
   const deleteOnClick = async (event) => {
     event.preventDefault()
     console.log(puppyToDelete)
