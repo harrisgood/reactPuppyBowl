@@ -1,32 +1,31 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-const SearchForm = ({playerList, setPlayerList}) => {
+const SearchForm = ({playerList, renderList, setRenderList}) => {
   const [userFilter, setUserFilter] = useState('')
-  // create array of all puppy names
-  const puppyNames = playerList.map(puppy => { return puppy.name })
+  
+  useEffect(() => {
+    filterRenderList();
+  }, [userFilter])
 
+  
   const handleTyping = (e) => {
     // store what user types as their filter
     setUserFilter(e.target.value)
-    const filteredNames = puppyNames.filter(currentPuppyName => 
-      currentPuppyName.toLowerCase().includes(userFilter.toLowerCase())
-    )
-    const filteredPuppies = []
-    filteredNames.forEach((currentName) => {
-      playerList.forEach(currentPuppy => {
-        if(currentPuppy.name===currentName){
-          filteredPuppies.push(currentPuppy)
-        }
-      })
-      // filteredPuppies.push(playerList.find( currentPuppy => {currentPuppy.name === currentName}))
-    })
-    setPlayerList(filteredPuppies)
-    // console.log(playerList)
-    console.log(filteredNames)
-    console.log(filteredPuppies)
-    
   }
 
+  const filterRenderList = () => {
+    console.log('hello???')
+
+    const filteredPuppies = playerList.filter(currentPuppy => 
+      currentPuppy.name.toLowerCase().includes(userFilter.toLowerCase())
+    )
+
+    setRenderList(filteredPuppies)
+
+    console.log(userFilter)
+    console.log(filteredPuppies)
+  }
+  
   return (
     <>
       <form>

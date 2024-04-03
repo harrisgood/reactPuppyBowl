@@ -1,8 +1,17 @@
-img {
-  height: 75px;
-  width: 75px;
+body{
+  background-color: darkkhaki;
 }
 
-div {
-  border: 3px solid hotpink;
+.playerCard{
+  border: 3px solid darkgreen;
+  background-color: darkseagreen;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.playerCard img {
+  height: 75px;
+  width: 75px;
 }

@@ -5,6 +5,7 @@ import SearchForm from "./SearchForm"
 
 const AllPlayers = ({detailPuppy, setDetailPuppy}) => {
   const [playerList, setPlayerList] = useState([])
+  const [renderList, setRenderList] = useState(playerList)
   
   useEffect(() => {
     fetchPlayerData();
@@ -17,7 +18,7 @@ const AllPlayers = ({detailPuppy, setDetailPuppy}) => {
     const playerData = jsonPlayers.data.players
 
     setPlayerList(playerData)
-
+    setRenderList(playerData)
     } catch (error) {
       console.log(error)
     }
@@ -27,11 +28,11 @@ const AllPlayers = ({detailPuppy, setDetailPuppy}) => {
         <>
           
           <h3>Filter by Name:</h3>
-          <SearchForm playerList={playerList} setPlayerList={setPlayerList}  />
+          <SearchForm playerList={playerList} renderList={renderList} setRenderList={setRenderList}  />
 
           <h2>This Year's Athletes</h2>
           <ul>
-            {playerList.map((currentPuppy, index) => {
+            {renderList.map((currentPuppy, index) => {
               return (<PlayerCard key={index} currentPuppy={currentPuppy} detailPuppy={detailPuppy} setDetailPuppy={setDetailPuppy} />
             )})}
           </ul>
